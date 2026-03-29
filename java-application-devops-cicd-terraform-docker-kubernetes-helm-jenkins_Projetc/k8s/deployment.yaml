@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-war-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: java-war-app
+  template:
+    metadata:
+      labels:
+        app: java-war-app
+    spec:
+      containers:
+      - name: java-war-container
+        image: vitthal38/java-app:1.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
