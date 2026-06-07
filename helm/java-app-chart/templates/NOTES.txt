@@ -1,0 +1,21 @@
+Java DevOps Application — {{ .Chart.Name }} {{ .Chart.Version }}
+
+  Release   : {{ .Release.Name }}
+  Namespace : {{ .Release.Namespace }}
+  Image     : {{ .Values.image.repository }}:{{ .Values.image.tag }}
+  Replicas  : {{ .Values.replicaCount }}
+
+Get the application URL:
+
+  kubectl get svc {{ include "java-app-chart.fullname" . }} \
+    -n {{ .Release.Namespace }} \
+    -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
+
+Check pod status:
+
+  kubectl get pods -n {{ .Release.Namespace }} \
+    -l app.kubernetes.io/instance={{ .Release.Name }}
+
+Rollback to previous release:
+
+  helm rollback {{ .Release.Name }} 1 -n {{ .Release.Namespace }}

@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-app-deployment
+  namespace: java-app
+  labels:
+    app: java-app
+spec:
+  replicas: 2
+
+  # RollingUpdate: replaces pods one at a time (zero downtime).
+  # maxSurge=1    — allows one extra pod during the update.
+  # maxUnavailable=0 — never reduces below the desired count.
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+
+  selector:
+    matchLabels:
+      app: java-app
+
+  template:
+    metadata:
+      labels:
+        app: java-app
+    spec:
+      # Run as non-root — limits attacker access if the app is exploited.
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        fsGroup: 2000
+
+      containers:
+        - name: app
+          image: vitthal38/java-devops-app:latest
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+
+          # requests: what Kubernetes reserves on the node for scheduling.
+          # limits: hard ceiling — pod is OOMKilled if it exceeds memory limit.
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+
+          # Liveness probe: Kubernetes restarts the container if this fails.
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 45
+            periodSeconds: 15
+            timeoutSeconds: 5
+            failureThreshold: 3
+
+          # Readiness probe: removes the pod from Service endpoints if this
+          # fails — stops traffic reaching a pod that is still starting.
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL

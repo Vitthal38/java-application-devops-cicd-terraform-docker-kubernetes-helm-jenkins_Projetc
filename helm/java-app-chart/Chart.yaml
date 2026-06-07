@@ -1,0 +1,9 @@
+apiVersion: v2
+name: java-app-chart
+description: Helm chart for the Java DevOps CI/CD portfolio application
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+maintainers:
+  - name: Vitthal Misal
+    email: misalvitthal38@gmail.com

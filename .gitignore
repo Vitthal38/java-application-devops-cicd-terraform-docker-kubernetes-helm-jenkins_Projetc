@@ -1,0 +1,27 @@
+# Terraform
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+*.tfvars
+!terraform.tfvars.example
+
+# Git folder (must never be tracked inside a repo)
+.git/
+
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+!app/ROOT.war
+
+# IDE / OS
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
+*.tmp
