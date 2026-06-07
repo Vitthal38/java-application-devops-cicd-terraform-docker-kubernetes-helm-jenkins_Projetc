@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" width="960" height="680" font-family="Segoe UI, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="960" height="680" fill="#0d1117" rx="12"/>
+
+  <!-- Title -->
+  <text x="480" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#e6edf3">AWS Infrastructure — java-devops-cicd-eks</text>
+  <text x="480" y="62" text-anchor="middle" font-size="13" fill="#8b949e">Provisioned by Terraform · Region: ap-south-1</text>
+
+  <!-- ── AWS outer border ─────────────────────────────────────────── -->
+  <rect x="20" y="80" width="920" height="560" rx="10" fill="none" stroke="#ff9900" stroke-width="2" stroke-dasharray="8,4"/>
+  <rect x="20" y="72" width="100" height="20" fill="#0d1117"/>
+  <text x="70" y="86" text-anchor="middle" font-size="13" font-weight="bold" fill="#ff9900">AWS Cloud</text>
+
+  <!-- ── VPC box ──────────────────────────────────────────────────── -->
+  <rect x="50" y="100" width="520" height="400" rx="8" fill="none" stroke="#3fb950" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <rect x="50" y="92" width="120" height="20" fill="#0d1117"/>
+  <text x="110" y="106" text-anchor="middle" font-size="12" font-weight="bold" fill="#3fb950">VPC 10.0.0.0/16</text>
+
+  <!-- ── AZ1 ──────────────────────────────────────────────────────── -->
+  <rect x="70" y="120" width="220" height="150" rx="6" fill="none" stroke="#4e9bcd" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <rect x="70" y="113" width="130" height="18" fill="#0d1117"/>
+  <text x="135" y="126" text-anchor="middle" font-size="11" fill="#4e9bcd">ap-south-1a</text>
+  <!-- Subnet 1a -->
+  <rect x="90" y="135" width="180" height="60" rx="6" fill="#161b22" stroke="#238636" stroke-width="1.2"/>
+  <text x="180" y="158" text-anchor="middle" font-size="11" fill="#8b949e">Public Subnet</text>
+  <text x="180" y="176" text-anchor="middle" font-size="13" font-weight="bold" fill="#3fb950">10.0.1.0/24</text>
+  <!-- IGW tag -->
+  <rect x="110" y="205" width="140" height="28" rx="4" fill="#1c2a1c" stroke="#3fb950" stroke-width="1"/>
+  <text x="180" y="223" text-anchor="middle" font-size="11" fill="#3fb950">Internet Gateway →</text>
+
+  <!-- ── AZ2 ──────────────────────────────────────────────────────── -->
+  <rect x="320" y="120" width="220" height="150" rx="6" fill="none" stroke="#4e9bcd" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <rect x="320" y="113" width="130" height="18" fill="#0d1117"/>
+  <text x="385" y="126" text-anchor="middle" font-size="11" fill="#4e9bcd">ap-south-1b</text>
+  <!-- Subnet 1b -->
+  <rect x="340" y="135" width="180" height="60" rx="6" fill="#161b22" stroke="#238636" stroke-width="1.2"/>
+  <text x="430" y="158" text-anchor="middle" font-size="11" fill="#8b949e">Public Subnet</text>
+  <text x="430" y="176" text-anchor="middle" font-size="13" font-weight="bold" fill="#3fb950">10.0.2.0/24</text>
+  <!-- IGW tag -->
+  <rect x="360" y="205" width="140" height="28" rx="4" fill="#1c2a1c" stroke="#3fb950" stroke-width="1"/>
+  <text x="430" y="223" text-anchor="middle" font-size="11" fill="#3fb950">Internet Gateway →</text>
+
+  <!-- ── EKS Cluster box ─────────────────────────────────────────── -->
+  <rect x="70" y="300" width="470" height="180" rx="8" fill="none" stroke="#ff9900" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <rect x="70" y="292" width="210" height="20" fill="#0d1117"/>
+  <text x="175" y="306" text-anchor="middle" font-size="12" font-weight="bold" fill="#ff9900">EKS Cluster — java-eks-cluster</text>
+
+  <!-- Node Group label -->
+  <text x="305" y="335" text-anchor="middle" font-size="11" fill="#8b949e">Managed Node Group · t3.medium · ON_DEMAND</text>
+
+  <!-- Pod 1 -->
+  <rect x="100" y="348" width="160" height="80" rx="6" fill="#161b22" stroke="#2496ed" stroke-width="1.5"/>
+  <text x="180" y="372" text-anchor="middle" font-size="11" fill="#8b949e">Pod 1</text>
+  <text x="180" y="392" text-anchor="middle" font-size="14" font-weight="bold" fill="#2496ed">java-app</text>
+  <text x="180" y="410" text-anchor="middle" font-size="10" fill="#8b949e">Tomcat:9 · port 8080</text>
+
+  <!-- Pod 2 -->
+  <rect x="350" y="348" width="160" height="80" rx="6" fill="#161b22" stroke="#2496ed" stroke-width="1.5"/>
+  <text x="430" y="372" text-anchor="middle" font-size="11" fill="#8b949e">Pod 2</text>
+  <text x="430" y="392" text-anchor="middle" font-size="14" font-weight="bold" fill="#2496ed">java-app</text>
+  <text x="430" y="410" text-anchor="middle" font-size="10" fill="#8b949e">Tomcat:9 · port 8080</text>
+
+  <!-- Resource info -->
+  <text x="305" y="455" text-anchor="middle" font-size="10" fill="#8b949e">cpu: 250m–500m · memory: 256Mi–512Mi · liveness + readiness probes</text>
+
+  <!-- ── Jenkins EC2 ──────────────────────────────────────────────── -->
+  <rect x="620" y="100" width="290" height="120" rx="8" fill="#161b22" stroke="#e3b341" stroke-width="1.5"/>
+  <text x="765" y="126" text-anchor="middle" font-size="12" font-weight="bold" fill="#e3b341">Jenkins EC2</text>
+  <text x="765" y="148" text-anchor="middle" font-size="11" fill="#8b949e">Pipeline Orchestrator</text>
+  <text x="765" y="165" text-anchor="middle" font-size="10" fill="#8b949e">SonarQube · Docker · kubectl · helm</text>
+  <text x="765" y="182" text-anchor="middle" font-size="10" fill="#8b949e">Trivy · AWS CLI · Jenkins LTS</text>
+  <!-- Port label -->
+  <rect x="700" y="193" width="130" height="20" rx="4" fill="#2a2200" stroke="#e3b341" stroke-width="1"/>
+  <text x="765" y="207" text-anchor="middle" font-size="10" fill="#e3b341">:8080 (admin UI)</text>
+
+  <!-- ── S3 State Bucket ─────────────────────────────────────────── -->
+  <rect x="620" y="250" width="130" height="70" rx="8" fill="#161b22" stroke="#7b42bc" stroke-width="1.5"/>
+  <text x="685" y="274" text-anchor="middle" font-size="11" font-weight="bold" fill="#7b42bc">S3 Bucket</text>
+  <text x="685" y="292" text-anchor="middle" font-size="10" fill="#8b949e">Terraform State</text>
+  <text x="685" y="307" text-anchor="middle" font-size="10" fill="#8b949e">Encrypted · Versioned</text>
+
+  <!-- ── DynamoDB Lock ───────────────────────────────────────────── -->
+  <rect x="780" y="250" width="130" height="70" rx="8" fill="#161b22" stroke="#7b42bc" stroke-width="1.5"/>
+  <text x="845" y="274" text-anchor="middle" font-size="11" font-weight="bold" fill="#7b42bc">DynamoDB</text>
+  <text x="845" y="292" text-anchor="middle" font-size="10" fill="#8b949e">State Lock Table</text>
+  <text x="845" y="307" text-anchor="middle" font-size="10" fill="#8b949e">PAY_PER_REQUEST</text>
+
+  <!-- ── LoadBalancer ───────────────────────────────────────────── -->
+  <rect x="620" y="355" width="290" height="60" rx="8" fill="#161b22" stroke="#ff9900" stroke-width="1.5"/>
+  <text x="765" y="380" text-anchor="middle" font-size="12" font-weight="bold" fill="#ff9900">AWS LoadBalancer</text>
+  <text x="765" y="398" text-anchor="middle" font-size="10" fill="#8b949e">Service type: LoadBalancer · port 80 → 8080</text>
+
+  <!-- ── DockerHub ──────────────────────────────────────────────── -->
+  <rect x="620" y="445" width="290" height="60" rx="8" fill="#161b22" stroke="#2496ed" stroke-width="1.5"/>
+  <text x="765" y="469" text-anchor="middle" font-size="12" font-weight="bold" fill="#2496ed">DockerHub Registry</text>
+  <text x="765" y="487" text-anchor="middle" font-size="10" fill="#8b949e">vitthal38/java-devops-app:BUILD_NUMBER</text>
+
+  <!-- ── User ──────────────────────────────────────────────────── -->
+  <rect x="660" y="540" width="210" height="50" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="765" y="562" text-anchor="middle" font-size="13" font-weight="bold" fill="#3fb950">👤 End User</text>
+  <text x="765" y="580" text-anchor="middle" font-size="10" fill="#8b949e">http://&lt;LoadBalancer-URL&gt;</text>
+
+  <!-- ── Arrows ─────────────────────────────────────────────────── -->
+  <!-- Jenkins → EKS -->
+  <line x1="620" y1="160" x2="540" y2="390" stroke="#e3b341" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="534,383 540,397 546,383" fill="#e3b341"/>
+  <text x="570" y="275" font-size="10" fill="#e3b341" transform="rotate(-55,570,275)">kubectl / helm</text>
+
+  <!-- Jenkins → DockerHub -->
+  <line x1="765" y1="445" x2="765" y2="415" stroke="#2496ed" stroke-width="1.5"/>
+  <polygon points="758,419 765,405 772,419" fill="#2496ed"/>
+
+  <!-- DockerHub → Pods (arrow left) -->
+  <line x1="620" y1="475" x2="545" y2="420" stroke="#2496ed" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="540,414 548,427 554,413" fill="#2496ed"/>
+
+  <!-- LB → Pods -->
+  <line x1="620" y1="375" x2="540" y2="388" stroke="#ff9900" stroke-width="1.5"/>
+  <polygon points="534,382 543,394 548,381" fill="#ff9900"/>
+
+  <!-- User → LB -->
+  <line x1="765" y1="540" x2="765" y2="415" stroke="#3fb950" stroke-width="1.5"/>
+  <polygon points="758,419 765,405 772,419" fill="#3fb950"/>
+
+  <!-- Footer -->
+  <text x="480" y="655" text-anchor="middle" font-size="11" fill="#8b949e">github.com/Vitthal38/java-devops-cicd-eks · Terraform modules: terraform-aws-modules/vpc + eks</text>
+</svg>

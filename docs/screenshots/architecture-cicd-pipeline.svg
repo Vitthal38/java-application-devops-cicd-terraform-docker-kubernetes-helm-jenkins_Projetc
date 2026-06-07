@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" width="900" height="1100" font-family="Segoe UI, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="900" height="1100" fill="#0d1117" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="44" text-anchor="middle" font-size="22" font-weight="bold" fill="#e6edf3">CI/CD Pipeline — java-devops-cicd-eks</text>
+  <text x="450" y="68" text-anchor="middle" font-size="13" fill="#8b949e">Jenkins Declarative Pipeline · 10 Stages</text>
+
+  <!-- Vertical spine line -->
+  <line x1="450" y1="100" x2="450" y2="1040" stroke="#30363d" stroke-width="2" stroke-dasharray="6,4"/>
+
+  <!-- Stage boxes -->
+  <!-- 1 Checkout -->
+  <rect x="300" y="100" width="300" height="54" rx="8" fill="#161b22" stroke="#238636" stroke-width="1.5"/>
+  <text x="450" y="121" text-anchor="middle" font-size="12" fill="#8b949e">Stage 1</text>
+  <text x="450" y="141" text-anchor="middle" font-size="15" font-weight="bold" fill="#3fb950">Checkout</text>
+
+  <!-- Arrow -->
+  <line x1="450" y1="154" x2="450" y2="178" stroke="#30363d" stroke-width="2"/>
+  <polygon points="443,174 450,188 457,174" fill="#30363d"/>
+
+  <!-- 2 Build -->
+  <rect x="300" y="188" width="300" height="54" rx="8" fill="#161b22" stroke="#238636" stroke-width="1.5"/>
+  <text x="450" y="209" text-anchor="middle" font-size="12" fill="#8b949e">Stage 2</text>
+  <text x="450" y="229" text-anchor="middle" font-size="15" font-weight="bold" fill="#3fb950">Build — Verify WAR</text>
+
+  <!-- Arrow -->
+  <line x1="450" y1="242" x2="450" y2="266" stroke="#30363d" stroke-width="2"/>
+  <polygon points="443,262 450,276 457,262" fill="#30363d"/>
+
+  <!-- 3 SonarQube -->
+  <rect x="300" y="276" width="300" height="54" rx="8" fill="#161b22" stroke="#4e9bcd" stroke-width="1.5"/>
+  <text x="450" y="297" text-anchor="middle" font-size="12" fill="#8b949e">Stage 3</text>
+  <text x="450" y="317" text-anchor="middle" font-size="15" font-weight="bold" fill="#4e9bcd">SonarQube Analysis</text>
+
+  <!-- Arrow -->
+  <line x1="450" y1="330" x2="450" y2="354" stroke="#30363d" stroke-width="2"/>
+  <polygon points="443,350 450,364 457,350" fill="#30363d"/>
+
+  <!-- 4 Quality Gate — diamond -->
+  <polygon points="450,364 560,410 450,456 340,410" fill="#161b22" stroke="#e3b341" stroke-width="2"/>
+  <text x="450" y="405" text-anchor="middle" font-size="14" font-weight="bold" fill="#e3b341">Quality Gate</text>
+
+  <!-- Fail branch (left) -->
+  <line x1="340" y1="410" x2="180" y2="410" stroke="#f85149" stroke-width="2"/>
+  <line x1="180" y1="410" x2="180" y2="470" stroke="#f85149" stroke-width="2"/>
+  <polygon points="173,466 180,480 187,466" fill="#f85149"/>
+  <rect x="110" y="480" width="140" height="44" rx="8" fill="#3d1a1a" stroke="#f85149" stroke-width="1.5"/>
+  <text x="180" y="500" text-anchor="middle" font-size="13" font-weight="bold" fill="#f85149">Pipeline</text>
+  <text x="180" y="516" text-anchor="middle" font-size="13" font-weight="bold" fill="#f85149">Aborts ✗</text>
+  <text x="250" y="400" font-size="11" fill="#f85149">FAIL</text>
+
+  <!-- Pass label -->
+  <text x="490" y="468" font-size="11" fill="#3fb950">PASS</text>
+
+  <!-- Arrow from gate down -->
+  <line x1="450" y1="456" x2="450" y2="520" stroke="#30363d" stroke-width="2"/>
+  <polygon points="443,516 450,530 457,516" fill="#30363d"/>
+
+  <!-- 5 Docker Build -->
+  <rect x="300" y="530" width="300" height="54" rx="8" fill="#161b22" stroke="#2496ed" stroke-width="1.5"/>
+  <text x="450" y="551" text-anchor="middle" font-size="12" fill="#8b949e">Stage 5</text>
+  <text x="450" y="571" text-anchor="middle" font-size="15" font-weight="bold" fill="#2496ed">Docker Build</text>
+
+  <!-- Arrow -->
+  <line x1="450" y1="584" x2="450" y2="608" stroke="#30363d" stroke-width="2"/>
+  <polygon points="443,604 450,618 457,604" fill="#30363d"/>
+
+  <!-- 6 Trivy -->
+  <rect x="300" y="618" width="300" height="54" rx="8" fill="#161b22" stroke="#1904da" stroke-width="1.5"/>
+  <text x="450" y="639" text-anchor="middle" font-size="12" fill="#8b949e">Stage 6</text>
+  <text x="450" y="659" text-anchor="middle" font-size="15" font-weight="bold" fill="#6e7bdb">Trivy Security Scan</text>
+
+  <!-- Arrow -->
+  <line x1="450" y1="672" x2="450" y2="696" stroke="#30363d" stroke-width="2"/>
+  <polygon points="443,692 450,706 457,692" fill="#30363d"/>
+
+  <!-- 7 Docker Push -->
+  <rect x="300" y="706" width="300" height="54" rx="8" fill="#161b22" stroke="#2496ed" stroke-width="1.5"/>
+  <text x="450" y="727" text-anchor="middle" font-size="12" fill="#8b949e">Stage 7</text>
+  <text x="450" y="747" text-anchor="middle" font-size="15" font-weight="bold" fill="#2496ed">Docker Push → DockerHub</text>
+
+  <!-- Arrow -->
+  <line x1="450" y1="760" x2="450" y2="784" stroke="#30363d" stroke-width="2"/>
+  <polygon points="443,780 450,794 457,780" fill="#30363d"/>
+
+  <!-- 8 Deploy EKS -->
+  <rect x="300" y="794" width="300" height="54" rx="8" fill="#161b22" stroke="#ff9900" stroke-width="1.5"/>
+  <text x="450" y="815" text-anchor="middle" font-size="12" fill="#8b949e">Stage 8</text>
+  <text x="450" y="835" text-anchor="middle" font-size="15" font-weight="bold" fill="#ff9900">Deploy to AWS EKS</text>
+
+  <!-- Arrow -->
+  <line x1="450" y1="848" x2="450" y2="872" stroke="#30363d" stroke-width="2"/>
+  <polygon points="443,868 450,882 457,868" fill="#30363d"/>
+
+  <!-- 9 Helm -->
+  <rect x="300" y="882" width="300" height="54" rx="8" fill="#161b22" stroke="#0f1689" stroke-width="1.5"/>
+  <text x="450" y="903" text-anchor="middle" font-size="12" fill="#8b949e">Stage 9</text>
+  <text x="450" y="923" text-anchor="middle" font-size="15" font-weight="bold" fill="#7b8ce0">Helm Upgrade --atomic</text>
+
+  <!-- Arrow -->
+  <line x1="450" y1="936" x2="450" y2="960" stroke="#30363d" stroke-width="2"/>
+  <polygon points="443,956 450,970 457,956" fill="#30363d"/>
+
+  <!-- 10 Validate -->
+  <rect x="300" y="970" width="300" height="54" rx="8" fill="#1a2d1a" stroke="#3fb950" stroke-width="2"/>
+  <text x="450" y="991" text-anchor="middle" font-size="12" fill="#8b949e">Stage 10</text>
+  <text x="450" y="1011" text-anchor="middle" font-size="15" font-weight="bold" fill="#3fb950">Validate Deployment ✓</text>
+
+  <!-- Footer -->
+  <text x="450" y="1070" text-anchor="middle" font-size="12" fill="#8b949e">github.com/Vitthal38/java-devops-cicd-eks</text>
+</svg>

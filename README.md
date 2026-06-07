@@ -232,9 +232,21 @@ terraform destroy
 
 ---
 
+## Architecture Diagrams
+
+### CI/CD Pipeline
+
+![CI/CD Pipeline](docs/screenshots/architecture-cicd-pipeline.svg)
+
+### AWS Infrastructure
+
+![AWS Infrastructure](docs/screenshots/architecture-aws-infrastructure.svg)
+
+---
+
 ## Screenshots
 
-> *Add these after running the pipeline — these images are the most important part of any DevOps portfolio.*
+> *Capture these after running the pipeline and add to `docs/screenshots/` — they are the highest-value portfolio evidence.*
 
 | # | Screenshot | What It Proves |
 |---|---|---|
@@ -246,12 +258,6 @@ terraform destroy
 | 6 | `helm status java-app` — STATUS: deployed | Helm release is healthy |
 | 7 | `terraform apply` terminal output | Real infrastructure was provisioned |
 | 8 | Application in browser at LoadBalancer URL | End-to-end: the thing actually works |
-
-Place screenshots in `docs/screenshots/` and reference them here:
-
-```markdown
-![Jenkins Pipeline](docs/screenshots/jenkins-pipeline.png)
-```
 
 ---
 
